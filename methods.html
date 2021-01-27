@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <div id="data_binding">
+    <div id="methods">
         <h2>{{message}}</h2>
         <input type="text" placeholder="Digite uma nova mesnagem: " v-on:blur="replaceMessage($event.target.value)">
     </div>
@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
     <script>
         let app = new Vue({
-            el: "#data_binding",
+            el: "#methods",
             data: {
                 message: 'Mensagem a ser mostrada',
             },

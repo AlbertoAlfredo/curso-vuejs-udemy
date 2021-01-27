@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-show</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <div v-show="isLogged">
+                <h1>v-show - Seja bem vindo a nossa área administrativa</h1>
+            </div>
+            <div v-if="isLogged">
+                <h1>v-if - Seja bem vindo a nossa área administrativa</h1>
+            </div>
+            <button v-on:click="logar">Logar</button><button v-on:click="deslogar">Deslogar</button>
+            
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    isLogged: false,
+                },
+                methods: {
+                    logar: function(){
+                        this.isLogged = true;
+                    },
+                    deslogar: function(){
+                        this.isLogged = false;
+                    },
+                }
+            })
+
+        </script>
+
+    </body>
+</html>
