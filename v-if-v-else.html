@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: V-if V-else</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <p v-if="show" key="total">{{ text }}<a v-on:click="diminuir"><br>...Leia Menos</a></p>
+            <p v-else key="truncado">{{ text | truncate(40)}}<a v-on:click="expandir">Leia Mais...</a></p>
+            
+            <h1>Ingressos a venda:</h1>
+            <div v-if="ingressos >= 15" key="muitoIngtresso">
+                <p>Temos {{ingressos}} ingressos</p>
+                <button v-on:click="venderIngresso(1)">Vender 1 ingresso</button>
+                <button v-on:click="venderIngresso(5)">Vender 5 ingressos</button>
+                <button v-on:click="venderIngresso(10)">Vender 10 ingressos</button>
+            </div>
+            <div v-else-if="ingressos" key="poucosIngressos">
+                <p>Temos apenas {{ingressos}} compre rápido ou ficará sem</p>
+                <button v-on:click="venderIngresso(1)">Vender 1 ingresso</button>
+                <button v-on:click="venderIngresso(5)">Vender 5 ingressos</button>
+                <button v-on:click="venderIngresso(10)">Vender 10 ingressos</button>
+            </div>
+            
+            <p v-else key="acabouIngressos">Ingressos esgotados</p>
+            
+            
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    show: false,
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptatibus, ipsa blanditiis impedit earum animi repellat sed facere praesentium facilis laudantium numquam consequuntur delectus incidunt nobis alias odio nemo dolor.",
+                    ingressos: 100,
+                },
+                methods: {
+                    expandir: function(){
+                        this.show = true;
+                    },
+                    diminuir: function(){
+                        this.show = false;
+                    },
+                    venderIngresso: function(value){
+                        if(this.ingressos >= value){
+                            this.ingressos -= value;
+                        }
+                    },
+                }
+            })
+
+        </script>
+
+    </body>
+</html>

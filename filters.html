@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Filtros</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="filters">
+
+            <h1>Hello {{ name | placeholder('Não foi informado nada, mas se precisar tenho café')}}</h1>
+            <h2>O meu salário é: {{salary | real}} {{ salary | pluralize(["real", "reais"]) }}</h2>
+            <input type="text" placeholder="Digite seu salário " v-model="salary">
+
+            <p>{{ msg | truncate(80) }}</p>
+            
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#filters',
+                data: {
+                    name: 'Hcode Treinamentos',
+                    salary: 1,
+                    msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolores fugit totam delectus labore ipsa quibusdam cupiditate doloribus repellat voluptates vitae officia optio, repudiandae dolor cumque corrupti quasi illo mollitia?"
+                },
+                filters: {
+                    upper: function(value) {
+                        return value.toUpperCase();
+                    },
+                    real: function(value) {
+                        return `R$ ${parseFloat(value).toFixed(2)}`;
+                    }
+                }
+                
+            })
+
+        </script>
+
+    </body>
+</html>
