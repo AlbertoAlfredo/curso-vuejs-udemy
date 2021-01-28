@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-model</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <p v-bind:style=" { fontSize: textSize + 'px', color: textColor}">{{message}}</p>
+            <!-- <input type="text" v-model="message"> -->
+            <textarea name="text" id="" cols="30" rows="10" v-model="message" ></textarea>
+            <input type="number" v-model="textSize">
+            <input v-model="textColor" type="text" maxlength="4" />
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    message: '',
+                    textSize: 10,
+                    textColor: "#000",
+                },
+
+            })
+
+        </script>
+
+    </body>
+</html>

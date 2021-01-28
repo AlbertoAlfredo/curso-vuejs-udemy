@@ -1,0 +1,52 @@
+a, a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .logo {
+    font-family: 'Open Sans Condensed';
+    font-size: 25px;
+}
+
+.navbar img {
+    display: block;
+    width: 150px;
+}
+
+.navbar .login {
+    position: absolute;
+    right: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.navbar .logout {
+    padding: 5px;
+}
+
+.posts {
+    margin-top: 50px;
+}
+
+.posts img {
+    width: 100%;
+}
+
+.posts .post-item {
+    border-bottom: 1px solid #F37520;
+    padding: 20px 0;
+}
+
+.posts .post-item h2 {
+    color: #F37520;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 30px;
+}

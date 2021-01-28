@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-html</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <div v-html='htmlTemplate'></div>
+            
+            
+            
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    htmlTemplate: `
+                    <h1 style='text-align: center; color: rgb(80, 0, 112);'>Este é um teste</h1>
+                    `,
+                },
+                methods: {
+                    
+                }
+            })
+
+        </script>
+
+    </body>
+</html>
