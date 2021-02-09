@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>Componente - Global</title>
+    <style src="node_modules/bootstrap/dist/css/bootstrap.css"></style>
+
+</head>
+
+<body>
+
+    <section id="components">
+        <text-render text="Esse é o teste 01"></text-render>
+        <text-render text="Esse é o teste 02"></text-render>
+        <text-render text="Esse é o teste 03"></text-render>
+        <text-render text="Esse é o teste 04"></text-render>
+        <text-render text="Esse é o teste 05"></text-render>
+
+        <hr>
+        
+        <list-component></list-component>
+    </section>
+
+
+
+</body>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component('text-render', {
+        props: ['text'],
+        template: `
+            <div>
+                <h4>{{ text }}</h4>
+            </div>
+        `
+    })
+
+    Vue.component('list-component', {
+        template: `
+            <ul>
+                <li v-for="person in names">{{person}}</li>
+            </ul>
+        `,
+        data: function(){
+            return{
+                names: ['Joãozinho', 'Jozézinho', 'Joquinha', 'Josuézinho', 'Adriano'],
+            }
+        }
+    })
+
+    let app = new Vue({
+        el: "#components",
+        data: {
+            
+        },
+        
+    })
+</script>
+</html>
