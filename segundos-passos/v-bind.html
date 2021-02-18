@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-html</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <a v-bind:href="url">google</a>
+            <a :href="url">google</a>
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    url: "http://www.google.com/",
+                },
+
+            })
+
+        </script>
+
+    </body>
+</html>

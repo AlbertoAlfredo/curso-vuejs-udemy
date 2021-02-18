@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-on</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <p v-bind:style=" { fontSize: textSize + 'px'}">{{message}}</p>
+            <!-- <input type="text" v-model="message"> -->
+            <textarea name="text" id="" cols="30" rows="10" v-model="message" placeholder="Digite sua mensagem"></textarea>
+            <input type="number" v-model="textSize">
+
+
+            <!-- aqui abaixo está o código da aula, apenas reaproveitei o código da aula anteriro para ficar mais legal a aplicação -->
+            <!-- Lembrando que o v-on pode ser usado usando apenas o @ como no exemplo abaixo
+            <button @click="reverseMessage">Inverta a mensagem</button> -->
+            <button v-on:click="reverseMessage">Inverta a mensagem</button>
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    message: '',
+                    textSize: 15,
+                },
+                methods: {
+                    reverseMessage: function(){
+                        this.message = this.message.split('').reverse().join('');
+                    }
+                }
+
+            })
+
+        </script>
+
+    </body>
+</html>

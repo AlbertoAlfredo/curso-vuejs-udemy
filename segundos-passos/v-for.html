@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diretivas: v-html</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+
+        <div id="diretivas">
+
+            <ol>
+                <li v-for='city in cities'>{{city}}</li>
+            </ol>
+            <ol>
+                <li v-for='item in objCities'>{{item.city}} - {{item.country}}</li>
+            </ol>
+            
+            <ul>
+                <li v-for="(filme, index) in filmes"> {{index}} - {{filme}} </li>
+            </ul>
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+
+        <script>
+
+            let app = new Vue({
+                el: '#diretivas',
+                data: {
+                    cities: ['São Paulo', 'Andradina', 'Rio de Janeiro', 'Araçatuba'],
+                    objCities: [
+                        {
+                            city: "São Paulo",
+                            country: "SP",
+                    },
+                    {
+                            city: "Andradina",
+                            country: "SP",
+                    },
+                    {
+                            city: "Araçatuba",
+                            country: "SP",
+                    },
+                    {
+                            city: "Rio de Janeiro",
+                            country: "RJ",
+                    },
+                    {
+                            city: "Três Lagoas",
+                            country: "MS",
+                    },
+                        ],
+                    filmes: ["Harry Potter", "Star Wars", "Jurassic Park", "Vingadores", "Dr Estranho"]
+                },
+
+            })
+
+        </script>
+
+    </body>
+</html>
