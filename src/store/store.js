@@ -57,5 +57,13 @@ export default new Vuex.Store({
         setHcodeNews(state, newValue){
             state.hcodeNews = newValue;
         }
+    },
+    actions: {
+        changeChampionship(context, value) {
+            context.commit('setChampionship', value);
+        },
+        updateClubName(context, value) {
+            context.commit('setClubName', value);
+        }
     }
 })

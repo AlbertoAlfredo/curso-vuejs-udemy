@@ -5,7 +5,7 @@
             <h3 v-if="championship">Você está vendo noticias do {{ championship }}</h3>
             <h3 v-else>Escolha um campeonato para ver notícias</h3>
         </div>
-        <component :is="currentComponent"></component>
+        <router-view></router-view>
         
 
         <div class="container">
@@ -21,14 +21,12 @@
     </div>
 </template>
 <script>
-import HcodeSectionBanner from "./HcodeSection/HcodeSectionBanner";
+
 import HcodeInput from "./HcodeSection/HcodeInput"
 import {mapGetters} from "vuex"
 
 export default {
     components: {
-        HcodeSectionBanner,
-        HcodeSectionNews: () => import("./HcodeSection/HcodeSectionNews"),
         HcodeInput,
     },
     data(){
